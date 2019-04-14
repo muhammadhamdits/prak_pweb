@@ -45,7 +45,7 @@ die();
         </thead>
         <tbody>
         <?php 
-            include("data_praktikum.php");
+          include("data_praktikum.php");
         ?>
         </tbody>
         <tfoot>

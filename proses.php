@@ -16,7 +16,16 @@ if(isset($_POST['login1'])){
   $nama   = $db->real_escape_string($_POST['nama']);
   $jmlh   = $db->real_escape_string($_POST['jumlah']);
   $result = $db->query("INSERT INTO matakuliah VALUES('$kode', '$nama', '$jmlh')");
-  if($result->affected_rows == 0){
+  if(!$result){
+    echo "gagal";
+  }
+} else if(isset($_POST['edit1'])){
+  $kdlm   = $db->real_escape_string($_POST['kdlm']);
+  $kode   = $db->real_escape_string($_POST['kode']);
+  $nama   = $db->real_escape_string($_POST['nama']);
+  $jmlh   = $db->real_escape_string($_POST['jumlah']);
+  $result = $db->query("UPDATE matakuliah SET kode_mk='$kode', nama_mk='$nama', jumlah_praktikan='$jmlh' WHERE kode_mk='$kdlm'");
+  if(!$result){
     echo "gagal";
   }
 }
