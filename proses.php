@@ -11,4 +11,12 @@ if(isset($_POST['login1'])){
   } else{
     echo "gagal";
   }
+} else if(isset($_POST['tambah1'])){
+  $kode   = $db->real_escape_string($_POST['kode']);
+  $nama   = $db->real_escape_string($_POST['nama']);
+  $jmlh   = $db->real_escape_string($_POST['jumlah']);
+  $result = $db->query("INSERT INTO matakuliah VALUES('$kode', '$nama', '$jmlh')");
+  if($result->affected_rows == 0){
+    echo "gagal";
+  }
 }

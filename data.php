@@ -1,5 +1,24 @@
 <?php
 require_once("_header.php");
+if(!isset($_SESSION['username'])){ ?>
+  <script>
+    // swal("Error", "Anda belum login!", "warning");
+    swal({
+      title: 'Error',
+      text: "Anda belum login",
+      type: 'error',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      window.location="index.php";
+    })
+    // window.location="index.php";
+  </script>
+<?php
+die();
+}
 ?>
 
 <!-- BEGIN Data Content -->
@@ -11,11 +30,11 @@ require_once("_header.php");
       <div class="row">
         <div class="col-8 mr-2"></div>
         <div class="col-3 mb-3 ml-5">
-          <button class="btn btn-info btn-xs form-control"><i class="material-icons">add</i><p>Tambah Data</p></button>
+          <button class="btn btn-info btn-xs form-control" data-toggle="modal" data-target="#tambahData"><i class="material-icons">add</i><p>Tambah Data</p></button>
         </div>
       </div>
-      <table class="table table-striped table-borderless table-hover" id="praktikum">
-        <thead class="text-center text-white">
+      <table class="table table-striped table-borderless table-hover text-center text-white" id="praktikum">
+        <thead>
           <tr>
               <th>No</th>
               <th>Kode</th>

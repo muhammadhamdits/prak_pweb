@@ -27,6 +27,14 @@
   <!-- BEGIN Title -->
   <title>Tugas - Praktikum Pemgrograman Web</title>
   <!-- END Title -->
+  <!-- BEGIN Javascript -->
+  <script src="assets/js/jquery-3.4.0.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/sweetalert.min.js"></script>
+  <script src="assets/js/datatables.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <!-- END Javascript -->
 </head>
 
 <body>
