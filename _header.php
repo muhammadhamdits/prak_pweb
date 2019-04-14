@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +18,7 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/icon.css">
+  <link rel="stylesheet" href="assets/css/sweetalert.css">
   <!-- END CSS -->
 
   <!-- BEGIN Icon -->
@@ -30,3 +37,46 @@
       <img class="card-img" src="assets/img/header.png" alt="Card image">
     </div>
     <!-- END HEADER -->
+
+  <!-- BEGIN CONTENT -->
+  <div class="row">
+    <!-- BEGIN Left Content -->
+    <div class="col-3 d-flex align-items-stretch" id="leftNav">
+      <div class="card text-white bg-info">
+        <div class="card-header">Sidebar</div>
+        <div class="card-body">
+          <?php 
+            if(!isset($_SESSION['username'])){ ?>
+              <h5 class="card-title text-center">Login here</h5>
+              <form id="formLogin">
+                <div class="form-group">
+                  <label for="username">Username:</label>
+                  <input type="text" name="username" id="username" placeholder="Your username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input type="password" name="password" id="password" placeholder="Your password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <input type="hidden" name="login1" value="login1">
+                  <button type="submit" class="btn btn-primary form-control mb-4" name="login" id="login">Login</button>
+                </div>
+              </form>
+              <h5 class="card-title text-center">Keterangan Login Default</h5>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-primary"><b>Username</b> -> Nomor Induk Mahasiswa</li>
+                <li class="list-group-item list-group-item-primary"><b>Password</b> -> Nomor Anggota Coder's Guild</li>
+              </ul> <?php
+            } else{ ?>
+              <p class="card-text hidden" style="margin-top:-63px; position:relative; z-index: -1;"> .............................................................  sssssssss.</p>
+              <h5 class="card-title text-center">Welcome, <?= $_SESSION['username']; ?></h5>
+              <a href="" class="btn btn-info form-control">Home</a>
+              <a href="" class="btn btn-info form-control">Data</a>
+              <a href="logout.php" class="btn btn-info form-control">Logout</a>
+              <?php
+            }
+          ?>
+        </div>
+      </div>
+    </div>
+    <!-- END Left Content -->
