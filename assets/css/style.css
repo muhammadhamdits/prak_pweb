@@ -11,14 +11,15 @@ body {
     text-shadow: 1px 1px 1px rgb(255, 255, 255);
 } */
 
-button {
+/* button {
     line-height: 0 !important
-}
+} */
 
-.container .row .card .card-body .form-group button p {
-    position: relative;
-    top: -7px;
-    display: inline;
+button p,
+a p {
+    position: relative !important;
+    top: -7px !important;
+    display: inline !important;
 }
 
 .container .btn-outline-warning:hover,

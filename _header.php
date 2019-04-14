@@ -1,7 +1,5 @@
 <?php
-session_start();
-
-
+  require_once("config.php");
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +17,7 @@ session_start();
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/icon.css">
   <link rel="stylesheet" href="assets/css/sweetalert.css">
+  <link rel="stylesheet" href="assets/css/datatables.min.css">
   <!-- END CSS -->
 
   <!-- BEGIN Icon -->
@@ -59,20 +58,20 @@ session_start();
                 </div>
                 <div class="form-group">
                   <input type="hidden" name="login1" value="login1">
-                  <button type="submit" class="btn btn-primary form-control mb-4" name="login" id="login">Login</button>
+                  <button type="submit" class="btn btn-info form-control mb-4" name="login" id="login">Login</button>
                 </div>
               </form>
               <h5 class="card-title text-center">Keterangan Login Default</h5>
               <ul class="list-group">
-                <li class="list-group-item list-group-item-primary"><b>Username</b> -> Nomor Induk Mahasiswa</li>
-                <li class="list-group-item list-group-item-primary"><b>Password</b> -> Nomor Anggota Coder's Guild</li>
+                <li class="list-group-item list-group-item-info"><b>Username</b> -> Nomor Induk Mahasiswa</li>
+                <li class="list-group-item list-group-item-info"><b>Password</b> -> Nomor Anggota Coder's Guild</li>
               </ul> <?php
             } else{ ?>
               <p class="card-text hidden" style="margin-top:-63px; position:relative; z-index: -1;"> .............................................................  sssssssss.</p>
-              <h5 class="card-title text-center">Welcome, <?= $_SESSION['username']; ?></h5>
-              <a href="" class="btn btn-info form-control">Home</a>
-              <a href="" class="btn btn-info form-control">Data</a>
-              <a href="logout.php" class="btn btn-info form-control">Logout</a>
+              <h5 class="card-title text-center mb-4">Welcome, <?= $_SESSION['username']; ?></h5>
+              <a href="index.php" class="btn btn-info form-control text-left"><i class="material-icons">home</i><p> Home</p></a>
+              <a href="data.php" class="btn btn-info form-control text-left"><i class="material-icons">table_chart</i><p> Data</p></a>
+              <a href="logout.php" class="btn btn-info form-control text-left"><i class="material-icons">highlight_off</i><p> Logout</p></a>
               <?php
             }
           ?>

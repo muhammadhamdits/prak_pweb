@@ -1,9 +1,6 @@
 <?php
 require_once("_header.php");
 ?>
-
-
-
     <!-- BEGIN Main Content -->
     <div class="col-9 d-flex align-items-stretch">
       <div class="card text-white bg-info">
