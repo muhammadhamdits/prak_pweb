@@ -1,0 +1,27 @@
+body {
+    background-color: powderblue
+}
+
+/* .container .row .card {
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 5px 2px rgba(135, 206, 250, .3);
+} */
+
+/* label {
+    text-shadow: 1px 1px 1px rgb(255, 255, 255);
+} */
+
+button {
+    line-height: 0 !important
+}
+
+.container .row .card .card-body .form-group button p {
+    position: relative;
+    top: -7px;
+    display: inline;
+}
+
+.container .btn-outline-warning:hover,
+.container .btn-outline-warning:active {
+    color: white !important
+}
